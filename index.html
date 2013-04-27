@@ -10,9 +10,14 @@
 </head>
 <body>
 
+  <!-- We don't need to prefix the variable with App 
+  because the ApplicationRoute defines a model method.
+  Whatever the model method returns is used as the 
+  context for this template. Since our model method
+  returns an object, that object is the context. It
+  has a name property and that is what is rendered. -->
   <script type="text/x-handlebars">
-    <h1>{{App.name}}</h1>
-    <h2>{{App.secondsViewed}}</h2>
+    <h1>{{name}}</h1>
   </script>
 
 </body>

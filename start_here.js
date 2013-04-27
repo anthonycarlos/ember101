@@ -1,10 +1,13 @@
 var App = Ember.Application.create();
 
-App.name = "Goodbye, Moon!";
-App.secondsViewed = 0;
+// We now are overriding the default route that ember 
+// had created automatically for us. The default route 
+// is called "ApplicationRoute". If we create a model 
+// method in the route, then whatever it returns is used 
+// as the context for the view template.
+App.ApplicationRoute = Ember.Route.extend({
+  model: function() {
+    return { name: "Gosh, it's full of stars!" }
+  }
+});
 
-// Demonstrate binding variables to the view.
-setInterval(function() {
-  var viewed = App.get('secondsViewed');
-  App.set('secondsViewed', viewed + 1);
-}, 1000);
