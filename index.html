@@ -17,7 +17,20 @@
   returns an object, that object is the context. It
   has a name property and that is what is rendered. -->
   <script type="text/x-handlebars">
-    <h1>{{name}}</h1>
+    <ul>
+      {{#each model}}
+        {{render "user" this}}
+      {{/each}}
+    </ul>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="user">
+    <li>
+      <p>
+        <img {{bindAttr src="avatar"}}>
+        <b>{{first}} {{last}}</b>
+      </p>
+    </li>
   </script>
 
 </body>
